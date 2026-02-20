@@ -1,12 +1,51 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useRef } from "react";
+import NeuralBackground from "@/components/portfolio/NeuralBackground";
+import Navigation from "@/components/portfolio/Navigation";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Projects from "@/components/portfolio/Projects";
+import Skills from "@/components/portfolio/Skills";
+import Contact from "@/components/portfolio/Contact";
+
+const CursorGlow = () => {
+  const cursorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.left = e.clientX + "px";
+        cursorRef.current.style.top = e.clientY + "px";
+      }
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return <div ref={cursorRef} className="cursor-glow" />;
+};
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* SEO Meta handled via index.html */}
+
+      {/* Animated neural network background */}
+      <NeuralBackground />
+
+      {/* Cursor glow effect */}
+      <CursorGlow />
+
+      {/* Navigation */}
+      <Navigation />
+
+      {/* Sections */}
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
     </div>
   );
 };
