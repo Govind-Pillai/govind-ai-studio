@@ -1,0 +1,193 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Github, TrendingUp, Eye, Database } from "lucide-react";
+
+const projects = [
+  {
+    id: 1,
+    icon: TrendingUp,
+    title: "IPL Data Analysis",
+    category: "Data Analytics",
+    description:
+      "Comprehensive EDA across 16 IPL seasons revealing performance patterns, chasing vs defending bias, and team consistency metrics through advanced feature engineering.",
+    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    highlights: ["16 Seasons Analyzed", "Feature Engineering", "Chasing Bias Discovery"],
+    accentColor: "primary",
+    gradientFrom: "rgba(59,130,246,0.15)",
+    gradientTo: "rgba(59,130,246,0.03)",
+    borderColor: "border-primary/30",
+    tagColor: "text-primary bg-primary/10 border-primary/30",
+    github: "https://github.com/govindshaji",
+  },
+  {
+    id: 2,
+    icon: Eye,
+    title: "Food Image Analysis & Recipe Generator",
+    category: "Computer Vision + NLP",
+    description:
+      "CNN-based food classification system achieving 85% accuracy using EfficientNet-B1, paired with T5-based NLP model for intelligent recipe generation from detected food items.",
+    tech: ["TensorFlow", "EfficientNet-B1", "T5 NLP", "OpenCV", "Python"],
+    highlights: ["85% Accuracy", "CNN Architecture", "Recipe Generation AI"],
+    accentColor: "secondary",
+    gradientFrom: "rgba(168,85,247,0.15)",
+    gradientTo: "rgba(168,85,247,0.03)",
+    borderColor: "border-secondary/30",
+    tagColor: "text-secondary bg-secondary/10 border-secondary/30",
+    github: "https://github.com/govindshaji",
+  },
+  {
+    id: 3,
+    icon: Database,
+    title: "Northwind Data Analysis",
+    category: "Business Intelligence",
+    description:
+      "Interactive Power BI dashboards delivering actionable business insights, identifying 40% higher Q4 sales trends and customer segmentation patterns using advanced DAX queries.",
+    tech: ["Power BI", "DAX", "Data Modeling", "SQL", "Analytics"],
+    highlights: ["40% Q4 Sales Trend", "Interactive Dashboards", "Customer Segmentation"],
+    accentColor: "primary",
+    gradientFrom: "rgba(59,130,246,0.15)",
+    gradientTo: "rgba(59,130,246,0.03)",
+    borderColor: "border-primary/30",
+    tagColor: "text-primary bg-primary/10 border-primary/30",
+    github: "https://github.com/govindshaji",
+  },
+];
+
+const Projects = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="projects" className="relative py-28" ref={ref}>
+      {/* Ambient purple glow */}
+      <div
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+
+      <div className="section-container">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <p className="text-secondary font-mono text-sm tracking-widest uppercase mb-3">
+            // projects
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            Featured{" "}
+            <span className="gradient-text">Work</span>
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Real-world AI/ML solutions built with cutting-edge technologies.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, i) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              whileHover={{ scale: 1.02, y: -8 }}
+              className={`glass-card rounded-2xl border ${project.borderColor} overflow-hidden group cursor-default flex flex-col`}
+              style={{
+                background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%), rgba(12, 18, 45, 0.6)`,
+              }}
+            >
+              {/* Card header */}
+              <div className="p-6 pb-4">
+                <div className="flex items-start justify-between mb-4">
+                  <div
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
+                      project.accentColor === "primary"
+                        ? "bg-primary/15 border border-primary/30"
+                        : "bg-secondary/15 border border-secondary/30"
+                    }`}
+                  >
+                    <project.icon
+                      size={22}
+                      className={
+                        project.accentColor === "primary"
+                          ? "text-primary"
+                          : "text-secondary"
+                      }
+                    />
+                  </div>
+                  <span
+                    className={`text-xs font-mono px-2.5 py-1 rounded-full border ${project.tagColor}`}
+                  >
+                    {project.category}
+                  </span>
+                </div>
+
+                <h3 className="font-bold text-lg text-foreground mb-3 leading-snug">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+
+              {/* Highlights */}
+              <div className="px-6 pb-4">
+                <div className="flex flex-col gap-1.5">
+                  {project.highlights.map((h) => (
+                    <div key={h} className="flex items-center gap-2">
+                      <div
+                        className={`w-1.5 h-1.5 rounded-full ${
+                          project.accentColor === "primary"
+                            ? "bg-primary"
+                            : "bg-secondary"
+                        }`}
+                      />
+                      <span className="text-xs text-muted-foreground">{h}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tech stack */}
+              <div className="px-6 pb-4 flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs px-2 py-0.5 rounded font-mono bg-muted/50 text-muted-foreground border border-border/50"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Footer */}
+              <div className="mt-auto px-6 pb-6">
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-300 ${
+                    project.accentColor === "primary"
+                      ? "border-primary/50 text-primary hover:bg-primary/15 hover:border-primary"
+                      : "border-secondary/50 text-secondary hover:bg-secondary/15 hover:border-secondary"
+                  }`}
+                >
+                  <Github size={16} />
+                  View on GitHub
+                </motion.a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
