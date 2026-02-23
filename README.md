@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# Govind AI Studio
 
-## Project info
+Welcome to the official repository for **Govind AI Studio**, a modern portfolio showcasing expertise in Data Science, Machine Learning, and AI Development.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Portfolio Preview](https://img.shields.io/badge/Status-Active-brightgreen)
+![Tech Stack](https://img.shields.io/badge/Tech-React%20%7C%20Vite%20%7C%20TypeScript%20%7C%20Tailwind-blue)
 
-## How can I edit this code?
+## 🚀 About the Project
 
-There are several ways of editing your application.
+This portfolio is a reflection of **Govind Shaji Pillai's** journey in the tech world. It's designed to be fast, interactive, and visually stunning, highlighting professional work in AI/ML research and application development.
 
-**Use Lovable**
+### Key Features
+- **Dynamic Hero Section**: Interactive neural network background with typing animations.
+- **Project Showcase**: Detailed cards for AI/ML projects with GitHub integration.
+- **Skills Matrix**: Categorized technical expertise from core AI to cloud technologies.
+- **Responsive Contact Hub**: Seamless communication channel with social profile links.
+- **Neural Backgrounds**: Custom-coded ambient effects for an immersive experience.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠️ Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: [React 18](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-**Use your preferred IDE**
+## 💻 Local Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Follow these steps to get the project running on your local machine:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Govind-Pillai/govind-ai-studio.git
+   ```
 
-Follow these steps:
+2. **Navigate to the directory**
+   ```bash
+   cd govind-ai-studio
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📬 Connect with Me
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+I'm always open to discussing AI/ML projects, research opportunities, or technical collaborations.
 
-**Edit a file directly in GitHub**
+- **LinkedIn**: [govind-pillai-726653271](https://www.linkedin.com/in/govind-pillai-726653271/)
+- **GitHub**: [@Govind-Pillai](https://github.com/Govind-Pillai)
+- **Email**: pillaigovind02@gmail.com
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Designed & Built with ❤️ by **Govind Shaji Pillai**

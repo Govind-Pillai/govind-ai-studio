@@ -20,15 +20,15 @@ const contactLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "govind-shaji-pillai",
-    href: "https://linkedin.com/in/govind-shaji-pillai",
+    value: "govind-pillai-726653271",
+    href: "https://www.linkedin.com/in/govind-pillai-726653271/",
     color: "primary",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "govindshaji",
-    href: "https://github.com/govindshaji",
+    value: "Govind-Pillai",
+    href: "https://github.com/Govind-Pillai",
     color: "secondary",
   },
 ];
@@ -103,18 +103,16 @@ const Contact = () => {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                 whileHover={{ scale: 1.02, x: 4 }}
-                className={`glass-card flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 group ${
-                  link.color === "primary"
+                className={`glass-card flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 group ${link.color === "primary"
                     ? "border-primary/20 hover:border-primary/50"
                     : "border-secondary/20 hover:border-secondary/50"
-                }`}
+                  }`}
               >
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
-                    link.color === "primary"
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${link.color === "primary"
                       ? "bg-primary/15 border border-primary/30"
                       : "bg-secondary/15 border border-secondary/30"
-                  }`}
+                    }`}
                 >
                   <link.icon
                     size={18}
@@ -126,9 +124,8 @@ const Contact = () => {
                     {link.label}
                   </p>
                   <p
-                    className={`font-medium text-sm ${
-                      link.color === "primary" ? "text-primary" : "text-secondary"
-                    }`}
+                    className={`font-medium text-sm ${link.color === "primary" ? "text-primary" : "text-secondary"
+                      }`}
                   >
                     {link.value}
                   </p>

@@ -17,7 +17,7 @@ const projects = [
     gradientTo: "rgba(59,130,246,0.03)",
     borderColor: "border-primary/30",
     tagColor: "text-primary bg-primary/10 border-primary/30",
-    github: "https://github.com/govindshaji",
+    github: "https://github.com/Govind-Pillai/IPL-Data_Analysis",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const projects = [
     gradientTo: "rgba(168,85,247,0.03)",
     borderColor: "border-secondary/30",
     tagColor: "text-secondary bg-secondary/10 border-secondary/30",
-    github: "https://github.com/govindshaji",
+    github: "https://github.com/Govind-Pillai",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const projects = [
     gradientTo: "rgba(59,130,246,0.03)",
     borderColor: "border-primary/30",
     tagColor: "text-primary bg-primary/10 border-primary/30",
-    github: "https://github.com/govindshaji",
+    github: "https://github.com/Govind-Pillai",
   },
 ];
 
@@ -104,11 +104,10 @@ const Projects = () => {
               <div className="p-6 pb-4">
                 <div className="flex items-start justify-between mb-4">
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${
-                      project.accentColor === "primary"
-                        ? "bg-primary/15 border border-primary/30"
-                        : "bg-secondary/15 border border-secondary/30"
-                    }`}
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform ${project.accentColor === "primary"
+                      ? "bg-primary/15 border border-primary/30"
+                      : "bg-secondary/15 border border-secondary/30"
+                      }`}
                   >
                     <project.icon
                       size={22}
@@ -140,11 +139,10 @@ const Projects = () => {
                   {project.highlights.map((h) => (
                     <div key={h} className="flex items-center gap-2">
                       <div
-                        className={`w-1.5 h-1.5 rounded-full ${
-                          project.accentColor === "primary"
-                            ? "bg-primary"
-                            : "bg-secondary"
-                        }`}
+                        className={`w-1.5 h-1.5 rounded-full ${project.accentColor === "primary"
+                          ? "bg-primary"
+                          : "bg-secondary"
+                          }`}
                       />
                       <span className="text-xs text-muted-foreground">{h}</span>
                     </div>
@@ -172,11 +170,10 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
-                  className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-300 ${
-                    project.accentColor === "primary"
-                      ? "border-primary/50 text-primary hover:bg-primary/15 hover:border-primary"
-                      : "border-secondary/50 text-secondary hover:bg-secondary/15 hover:border-secondary"
-                  }`}
+                  className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-300 ${project.accentColor === "primary"
+                    ? "border-primary/50 text-primary hover:bg-primary/15 hover:border-primary"
+                    : "border-secondary/50 text-secondary hover:bg-secondary/15 hover:border-secondary"
+                    }`}
                 >
                   <Github size={16} />
                   View on GitHub
