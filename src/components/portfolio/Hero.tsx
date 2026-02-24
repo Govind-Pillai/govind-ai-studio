@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Mail, ExternalLink } from "lucide-react";
+import { ArrowDown, FileText, Download, Mail, ExternalLink } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import RadarRings from "./RadarRings";
 import heroNeuralBg from "@/assets/hero-neural-bg.jpg";
 
@@ -10,6 +11,7 @@ const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
     const currentRole = ROLES[roleIndex];
@@ -127,16 +129,15 @@ const Hero = () => {
             View Projects
           </motion.button>
 
-          <motion.a
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/resume.pdf"
-            download
+            onClick={() => setResumeOpen(true)}
             className="btn-outline-glow px-7 py-3.5 rounded-xl font-semibold text-base flex items-center gap-2"
           >
-            <Download size={18} />
-            Download Resume
-          </motion.a>
+            <FileText size={18} />
+            View Resume
+          </motion.button>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -193,6 +194,29 @@ const Hero = () => {
           </motion.div>
         </motion.button>
       </div>
+      {/* Resume Viewer Dialog */}
+      <Dialog open={resumeOpen} onOpenChange={setResumeOpen}>
+        <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 glass-card border-primary/20">
+          <DialogHeader className="p-4 pb-2 flex flex-row items-center justify-between">
+            <DialogTitle className="gradient-text text-lg">Resume — Govind Shaji Pillai</DialogTitle>
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-primary/20 text-primary hover:bg-primary/30 transition-colors mr-8"
+            >
+              <Download size={14} />
+              Download
+            </a>
+          </DialogHeader>
+          <div className="flex-1 overflow-hidden px-4 pb-4">
+            <iframe
+              src="/resume.pdf"
+              className="w-full h-full rounded-lg border border-border/50"
+              title="Resume"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
