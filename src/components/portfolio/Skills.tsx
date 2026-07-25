@@ -3,45 +3,58 @@ import { motion, useInView } from "framer-motion";
 
 const skillCategories = [
   {
-    title: "Languages",
+    title: "Languages & DBs",
     icon: "{ }",
     color: "primary",
     skills: [
-      { name: "Python", level: 92 },
-      { name: "SQL", level: 85 },
-      { name: "C++", level: 70 },
+      { name: "Python & C++", level: 92 },
+      { name: "SQL (Postgres/MySQL)", level: 88 },
+      { name: "SQLite & MongoDB", level: 80 },
     ],
   },
   {
-    title: "ML / AI Libraries",
+    title: "AI / ML & RAG",
     icon: "🧠",
     color: "secondary",
     skills: [
-      { name: "TensorFlow", level: 82 },
-      { name: "scikit-learn", level: 88 },
-      { name: "PyTorch", level: 75 },
-      { name: "Pandas", level: 92 },
-      { name: "NumPy", level: 90 },
-      { name: "OpenCV", level: 78 },
+      { name: "LangChain & LlamaIndex", level: 88 },
+      { name: "RAG & LLMs", level: 86 },
+      { name: "PyTorch & TensorFlow", level: 78 },
+      { name: "scikit-learn & OpenCV", level: 85 },
+      { name: "ChromaDB & Qdrant", level: 82 },
     ],
   },
   {
-    title: "Cloud & Tools",
-    icon: "☁️",
+    title: "Frameworks & Tools",
+    icon: "⚙️",
     color: "primary",
     skills: [
-      { name: "GCP", level: 72 },
-      { name: "Docker", level: 75 },
-      { name: "Kubernetes", level: 65 },
-      { name: "Power BI", level: 85 },
+      { name: "Django & FastAPI", level: 85 },
+      { name: "Flask & HTMX", level: 80 },
+      { name: "React", level: 75 },
+      { name: "Docker & Git", level: 82 },
+      { name: "GCP Cloud & Linux", level: 72 },
+    ],
+  },
+  {
+    title: "PM & Practices",
+    icon: "📋",
+    color: "secondary",
+    skills: [
+      { name: "Agile / Scrum", level: 90 },
+      { name: "Jira Boards", level: 88 },
+      { name: "BRD / PRD / FSD", level: 85 },
+      { name: "Gap Analysis", level: 88 },
     ],
   },
 ];
 
 const techBadges = [
-  "Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas", "NumPy",
-  "OpenCV", "SQL", "GCP", "Docker", "Kubernetes", "Power BI", "DAX",
-  "EfficientNet", "T5 NLP", "Matplotlib", "Seaborn", "C++", "Git", "Jupyter"
+  "Python", "C++", "SQL", "Django", "FastAPI", "Flask", "HTMX", "React", "Docker", "Git", "GCP", 
+  "PyTorch", "TensorFlow", "scikit-learn", "RAG", "LLMs", "ChromaDB", "Qdrant", "pgvector", 
+  "Ollama", "Hugging Face", "Power BI", "DAX", "Power Query M", "Excel (advanced)", "Pandas", 
+  "NumPy", "Matplotlib", "Seaborn", "PostgreSQL", "MySQL", "MongoDB", "SQLite", "Agile/Scrum", 
+  "Jira", "Risk Assessment", "Stakeholder Comm", "KPI Monitoring", "BRD/PRD/FSD", "Gap Analysis"
 ];
 
 const Skills = () => {
@@ -49,7 +62,7 @@ const Skills = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="relative py-28" ref={ref}>
+    <section id="skills" className="relative py-16 section-bg-skills w-[90%] mx-auto" ref={ref}>
       {/* Ambient blue glow left */}
       <div
         className="absolute left-0 bottom-0 w-96 h-96 rounded-full pointer-events-none"
@@ -60,6 +73,7 @@ const Skills = () => {
       />
 
       <div className="section-container">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,12 +87,12 @@ const Skills = () => {
             Tech <span className="gradient-text">Arsenal</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            The tools and technologies I wield to build intelligent systems.
+            The tools, technologies, and management methodologies I leverage to build solutions.
           </p>
         </motion.div>
 
         {/* Skill category cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}

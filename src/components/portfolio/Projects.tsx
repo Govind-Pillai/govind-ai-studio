@@ -1,33 +1,33 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Github, TrendingUp, Eye, Database } from "lucide-react";
+import { Github, Bot, FileText, Languages, BarChart3, Utensils } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    icon: TrendingUp,
-    title: "IPL Data Analysis",
-    category: "Data Analytics",
+    icon: Bot,
+    title: "PM AI Agent — Multi-Agent Project Management Assistant",
+    category: "AI / Multi-Agent",
     description:
-      "Comprehensive EDA across 16 IPL seasons revealing performance patterns, chasing vs defending bias, and team consistency metrics through advanced feature engineering.",
-    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
-    highlights: ["16 Seasons Analyzed", "Feature Engineering", "Chasing Bias Discovery"],
+      "A local-first multi-agent AI assistant using LangChain to orchestrate four specialized agents (Planner, Scheduler, Reporter, and Comms) handling distinct PM workflows.",
+    tech: ["LangChain", "Llama.cpp", "ChromaDB", "RAG", "SQLite", "Streamlit"],
+    highlights: ["4 Specialized PM Agents", "Local-first RAG Pipeline", "Offline Conversation Storage"],
     accentColor: "primary",
     gradientFrom: "rgba(59,130,246,0.15)",
     gradientTo: "rgba(59,130,246,0.03)",
     borderColor: "border-primary/30",
     tagColor: "text-primary bg-primary/10 border-primary/30",
-    github: "https://github.com/Govind-Pillai/IPL-Data_Analysis",
+    github: "https://github.com/Govind-Pillai",
   },
   {
     id: 2,
-    icon: Eye,
-    title: "Food Image Analysis & Recipe Generator",
-    category: "Computer Vision + NLP",
+    icon: FileText,
+    title: "Financial Document Management System with RAG",
+    category: "AI / RAG",
     description:
-      "CNN-based food classification system achieving 85% accuracy using EfficientNet-B1, paired with T5-based NLP model for intelligent recipe generation from detected food items.",
-    tech: ["TensorFlow", "EfficientNet-B1", "T5 NLP", "OpenCV", "Python"],
-    highlights: ["85% Accuracy", "CNN Architecture", "Recipe Generation AI"],
+      "Secure document management platform featuring FastAPI JWT-based authentication, role-based access control, and a RAG pipeline utilizing Qdrant vector store and BGE embeddings.",
+    tech: ["FastAPI", "Qdrant", "BGE Embeddings", "JWT", "RBAC", "Streamlit"],
+    highlights: ["Role-Based Access Control", "Semantic Document Search", "FastAPI Secure Endpoints"],
     accentColor: "secondary",
     gradientFrom: "rgba(168,85,247,0.15)",
     gradientTo: "rgba(168,85,247,0.03)",
@@ -37,13 +37,45 @@ const projects = [
   },
   {
     id: 3,
-    icon: Database,
-    title: "Northwind Data Analysis",
-    category: "Business Intelligence",
+    icon: Languages,
+    title: "Language Identification & Emotion Detection Web App",
+    category: "Deep Learning / Web App",
     description:
-      "Interactive Power BI dashboards delivering actionable business insights, identifying 40% higher Q4 sales trends and customer segmentation patterns using advanced DAX queries.",
-    tech: ["Power BI", "DAX", "Data Modeling", "SQL", "Analytics"],
-    highlights: ["40% Q4 Sales Trend", "Interactive Dashboards", "Customer Segmentation"],
+      "Full-stack Django and HTMX web application for real-time multilingual text classification and emotion detection powered by a fine-tuned XLM-RoBERTa transformer model.",
+    tech: ["Django", "HTMX", "XLM-RoBERTa", "Python", "Transformers"],
+    highlights: ["92% Accuracy", "100+ Languages Supported", "Real-time No-Reload UI"],
+    accentColor: "primary",
+    gradientFrom: "rgba(59,130,246,0.15)",
+    gradientTo: "rgba(59,130,246,0.03)",
+    borderColor: "border-primary/30",
+    tagColor: "text-primary bg-primary/10 border-primary/30",
+    github: "https://github.com/Govind-Pillai",
+  },
+  {
+    id: 4,
+    icon: BarChart3,
+    title: "IPL Data Analysis Platform",
+    category: "Data Science / EDA",
+    description:
+      "In-depth exploratory data analysis on 16 seasons of IPL data, revealing patterns in team performance, toss impact, venue advantages, and generating features for auction strategy.",
+    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    highlights: ["16 Seasons Analyzed", "20+ Visualizations & Heatmaps", "Auction Recommendation Engine"],
+    accentColor: "secondary",
+    gradientFrom: "rgba(168,85,247,0.15)",
+    gradientTo: "rgba(168,85,247,0.03)",
+    borderColor: "border-secondary/30",
+    tagColor: "text-secondary bg-secondary/10 border-secondary/30",
+    github: "https://github.com/Govind-Pillai/IPL-Data_Analysis",
+  },
+  {
+    id: 5,
+    icon: Utensils,
+    title: "Food Image Recognition with Recipe Generation",
+    category: "Computer Vision / NLP",
+    description:
+      "An end-to-end deep learning system combining an EfficientNet-B1 image classifier with a T5 transformer model to dynamically generate custom recipes from uploaded food photos.",
+    tech: ["TensorFlow", "EfficientNet-B1", "T5 Transformer", "Flask", "REST API"],
+    highlights: ["85% Classification Accuracy", "T5 Recipe Generation", "Drag-and-Drop Web Interface"],
     accentColor: "primary",
     gradientFrom: "rgba(59,130,246,0.15)",
     gradientTo: "rgba(59,130,246,0.03)",
@@ -58,7 +90,7 @@ const Projects = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="relative py-28" ref={ref}>
+    <section id="projects" className="relative py-16 section-bg-projects w-[90%] mx-auto" ref={ref}>
       {/* Ambient purple glow */}
       <div
         className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full pointer-events-none"

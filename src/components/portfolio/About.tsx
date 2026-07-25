@@ -62,7 +62,7 @@ const About = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative py-28" ref={ref}>
+    <section id="about" className="relative py-16 section-bg-about w-[90%] mx-auto" ref={ref}>
       {/* Ambient glow */}
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
@@ -104,18 +104,14 @@ const About = () => {
           >
             <div className="glass-card p-6 rounded-2xl border border-primary/20">
               <p className="text-foreground/90 leading-relaxed text-base">
-                I'm a <span className="text-primary font-semibold">Data Scientist & ML Engineer</span> with a
-                B.Tech in Electronics & Computer Engineering (2024). My passion lies in
-                building scalable AI-driven solutions that solve real-world problems.
+                I am a results-driven <span className="text-primary font-semibold">Project Management professional & Engineer</span> with a
+                B.Tech in Electronics & Computer Engineering (2020-2024). I specialize in translating complex business requirements into clear technical specifications for fintech, real estate, and enterprise CRM/ERP platforms.
               </p>
             </div>
 
             <div className="glass-card p-6 rounded-2xl border border-secondary/20">
               <p className="text-foreground/90 leading-relaxed text-base">
-                With strong foundations in <span className="text-secondary font-semibold">Python, SQL, and Machine Learning</span>,
-                I specialize in ML model building, Exploratory Data Analysis, NLP, and Computer Vision.
-                Currently working as a <span className="text-primary font-semibold">Project Management Trainee</span>,
-                I'm focused on bringing AI innovation to enterprise scale.
+                With a proven track record managing end-to-end delivery across multiple concurrent projects using <span className="text-secondary font-semibold">Agile/Scrum methodologies</span>, I combine project leadership with growing expertise in AI/ML, Large Language Models (LLMs), RAG pipelines, and full-stack development.
               </p>
             </div>
 
@@ -124,16 +120,23 @@ const About = () => {
                 Core focus areas
               </p>
               <div className="flex flex-wrap gap-2">
-                {["Machine Learning", "Computer Vision", "NLP", "EDA", "Cloud AI", "Data Analytics", "Deep Learning"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs rounded-full border border-primary/30 text-primary bg-primary/5 font-mono"
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
+                {[
+                  "Project Management",
+                  "Agile & Scrum",
+                  "Business Analysis",
+                  "BRD/PRD/FSD Authoring",
+                  "Gap Analysis",
+                  "LLMs & RAG Pipelines",
+                  "Full-Stack Development",
+                  "Data Analytics"
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 text-xs rounded-full border border-primary/30 text-primary bg-primary/5 font-mono"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>

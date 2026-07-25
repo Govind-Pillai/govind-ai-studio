@@ -5,7 +5,12 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import RadarRings from "./RadarRings";
 import heroNeuralBg from "@/assets/hero-neural-bg.jpg";
 
-const ROLES = ["Data Scientist", "ML Engineer", "AI Developer", "Computer Vision Engineer"];
+const ROLES = [
+  "Project Manager & Engineer",
+  "AI / ML Developer",
+  "Data Scientist",
+  "Full-Stack Developer"
+];
 
 const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -103,10 +108,9 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
           className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Transforming data into intelligent solutions through{" "}
-          <span className="text-primary font-medium">Machine Learning</span>,{" "}
-          <span className="text-secondary font-medium">Computer Vision</span>, and{" "}
-          <span className="text-primary font-medium">Cloud Technologies</span>.
+          Translating complex business requirements into clear technical specifications, with hands-on experience driving{" "}
+          <span className="text-primary font-medium">Agile/Scrum Delivery</span>, building{" "}
+          <span className="text-secondary font-medium">AI/ML & RAG Systems</span>, and developing full-stack web applications.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -161,9 +165,9 @@ const Hero = () => {
           className="mt-20 flex flex-wrap justify-center gap-8"
         >
           {[
-            { value: "3+", label: "AI Projects" },
-            { value: "85%", label: "Model Accuracy" },
-            { value: "16", label: "IPL Seasons Analyzed" },
+            { value: "5", label: "AI/ML Projects" },
+            { value: "4", label: "PM Roles" },
+            { value: "92%", label: "Model Accuracy" },
             { value: "B.Tech", label: "ECE Graduate" },
           ].map((stat, i) => (
             <motion.div
@@ -194,10 +198,9 @@ const Hero = () => {
           </motion.div>
         </motion.button>
       </div>
-      {/* Resume Viewer Dialog */}
       <Dialog open={resumeOpen} onOpenChange={setResumeOpen}>
         <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 glass-card border-primary/20">
-          <DialogHeader className="p-4 pb-2 flex flex-row items-center justify-between">
+          <DialogHeader className="py-2.5 px-4 flex flex-row items-center justify-between space-y-0">
             <DialogTitle className="gradient-text text-lg">Resume — Govind Shaji Pillai</DialogTitle>
             <a
               href="/resume.pdf"

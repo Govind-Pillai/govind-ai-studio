@@ -3,6 +3,7 @@ import NeuralBackground from "@/components/portfolio/NeuralBackground";
 import Navigation from "@/components/portfolio/Navigation";
 import Hero from "@/components/portfolio/Hero";
 import About from "@/components/portfolio/About";
+import Experience from "@/components/portfolio/Experience";
 import Projects from "@/components/portfolio/Projects";
 import Skills from "@/components/portfolio/Skills";
 import Contact from "@/components/portfolio/Contact";
@@ -39,9 +40,10 @@ const Index = () => {
       <Navigation />
 
       {/* Sections */}
-      <main>
+      <main className="space-y-4">
         <Hero />
         <About />
+        <Experience />
         <Projects />
         <Skills />
         <Contact />

@@ -48,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-28" ref={ref}>
+    <section id="contact" className="relative py-16 section-bg-contact w-[90%] mx-auto" ref={ref}>
       {/* Ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
